@@ -9,7 +9,8 @@ app.use(express.urlencoded({ extended: false }));
 app.get('/', (req, res) => {
   res.json({
     message: 'Welcome to the User Management API',
-    status: 'Server is running'
+    status: 'Server is running',
+    environment: process.env.NODE_ENV
   });
 });
 
