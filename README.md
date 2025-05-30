@@ -33,7 +33,12 @@ cd user-management-api
 npm install
 ```
 
-3. Create a `.env` file in the root directory with the following variables:
+3. Install nodemon globally (if not already installed)
+```bash
+npm install -g nodemon
+```
+
+4. Create a `.env` file in the root directory with the following variables:
 ```
 PORT=5000
 MONGO_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/?retryWrites=true&w=majority&appName=<AppName>
@@ -60,7 +65,17 @@ Note: If your password contains special characters, they must be percent-encoded
 
 ## Running the Application
 
-Start the server:
+Start the server with nodemon for development (automatically restarts on file changes):
+```bash
+nodemon src/server.js
+```
+
+Or use the npm script if configured in package.json:
+```bash
+npm run dev
+```
+
+For production:
 ```bash
 npm start
 ```
